@@ -233,7 +233,9 @@ LIMIT 10
 
 ## 📸 Screenshots
 
-*(Add screenshots of home page, quiz, and result page here)*
+![Home Page](screenshots/home.png)
+![Quiz Page](screenshots/quiz.png)
+![Result Page](screenshots/result)
 
 ---
 
