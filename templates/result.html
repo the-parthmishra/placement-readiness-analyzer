@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Result - Placement Readiness</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>&#127941; Your Result</h1>
+
+    <!-- =============================================
+         SCORE CARD (color changes based on score)
+         ============================================= -->
+    <div class="score-card {% if total >= 70 %}green{% elif total >= 50 %}orange{% else %}red{% endif %}">
+        <p class="score-label">Overall Readiness Score</p>
+        <h2>{{ total }}%</h2>
+        <div class="score-meta">
+            <span>&#128200; Percentile: <strong>{{ percentile }}th</strong></span>
+            <span>&#9989; Strongest: <strong>{{ strongest }}</strong></span>
+            <span>&#9888;&#65039; Weakest: <strong>{{ weakest }}</strong></span>
+        </div>
+    </div>
+
+    <!-- =============================================
+         CHART.JS RADAR CHART
+         ============================================= -->
+    <div class="chart-section">
+        <h3>Skill Breakdown</h3>
+        <canvas id="radarChart" width="400" height="350"></canvas>
+    </div>
+
+    <!-- =============================================
+         STUDY ROADMAP
+         ============================================= -->
+    <div class="roadmap-section">
+        <h3>&#128218; Your Personalized Study Roadmap</h3>
+        <ul class="roadmap-list">
+            {% for item in roadmap %}
+            <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- =============================================
+         ACTION BUTTONS
+         ============================================= -->
+    <a href="/" class="btn" style="margin-top:24px;">&#8592; Take Test Again</a>
+    <a href="/history" class="btn btn-secondary">&#128203; View Past Results</a>
+
+</div>
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    // Get data passed from Flask
+    const labels = JSON.parse('{{ labels | tojson | safe }}');
+    const dataValues = JSON.parse('{{ values | tojson | safe }}');
+
+    // Create radar chart
+    new Chart(document.getElementById("radarChart"), {
+        type: "radar",
+        data: {
+            labels: labels,
+            datasets: [{
+                label: "Your Skill Score",
+                data: dataValues,
+                backgroundColor: "rgba(83, 74, 183, 0.2)",
+                borderColor: "#534AB7",
+                borderWidth: 2,
+                pointBackgroundColor: "#534AB7",
+                pointRadius: 4
+            }]
+        },
+        options: {
+            scales: {
+                r: {
+                    beginAtZero: true,
+                    min: 0,
+                    max: 1,
+                    ticks: {
+                        stepSize: 0.2,
+                        callback: function(value) {
+                            return (value * 100) + "%";
+                        },
+                        font: { size: 10 }
+                    },
+                    pointLabels: {
+                        font: { size: 12 }
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: { font: { size: 12 } }
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

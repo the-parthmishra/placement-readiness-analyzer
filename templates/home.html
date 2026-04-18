@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Readiness Tool</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>&#128640; Placement Readiness Tool</h1>
+    <p class="subtitle">
+        Find out if you are ready for Product, Service, or Core company placements.<br>
+        Get a personalized study roadmap based on your weak areas.
+    </p>
+
+    <!-- Feature Cards -->
+    <div class="card-grid">
+        <div class="card">
+            <h3>&#128203; Skill Analysis</h3>
+            <p>Evaluate DSA, OS, DBMS, CN, Aptitude &amp; Communication</p>
+        </div>
+        <div class="card">
+            <h3>&#127919; 3 Company Types</h3>
+            <p>Product, Service &amp; Core company placement paths</p>
+        </div>
+        <div class="card">
+            <h3>&#128218; Study Roadmap</h3>
+            <p>Get tailored preparation plan based on your weak areas</p>
+        </div>
+    </div>
+
+    <!-- Selection Form -->
+    <div class="form-box">
+        <form action="/quiz" method="GET">
+            <label for="target">Select Your Target Company Type:</label>
+            <select name="target" id="target" required>
+                <option value="">-- Choose --</option>
+                <option value="product">Product Company (Google, Amazon, Flipkart)</option>
+                <option value="service">Service Company (TCS, Infosys, Wipro)</option>
+                <option value="core">Core Company (DRDO, ISRO, BARC)</option>
+            </select>
+            <button type="submit">Start Test &#8594;</button>
+        </form>
+    </div>
+
+    <!-- History Link -->
+    <p style="text-align:center; margin-top:16px; font-size:13px; color:#888;">
+        <a href="/history" style="color:#534AB7; text-decoration:none;">View past test results &#8594;</a>
+    </p>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+{
+  "product": [
+    {"question": "What is the time complexity of Binary Search?", "options": ["O(n)", "O(log n)", "O(n^2)", "O(1)"], "answer": "O(log n)", "category": "DSA"},
+    {"question": "Which data structure follows LIFO (Last In First Out)?", "options": ["Queue", "Stack", "Tree", "Graph"], "answer": "Stack", "category": "DSA"},
+    {"question": "Which sorting algorithm has O(n log n) worst case?", "options": ["Bubble Sort", "Selection Sort", "Merge Sort", "Insertion Sort"], "answer": "Merge Sort", "category": "DSA"},
+    {"question": "In a linked list, which operation takes O(1) time?", "options": ["Search", "Insert at end", "Insert at beginning", "Delete from middle"], "answer": "Insert at beginning", "category": "DSA"},
+    {"question": "Which data structure is used in Breadth First Search (BFS)?", "options": ["Stack", "Queue", "Heap", "Array"], "answer": "Queue", "category": "DSA"},
+
+    {"question": "Which of the following is an Operating System?", "options": ["Linux", "Oracle", "HTML", "Python"], "answer": "Linux", "category": "OS"},
+    {"question": "Deadlock requires how many necessary conditions?", "options": ["2", "3", "4", "5"], "answer": "4", "category": "OS"},
+    {"question": "Which CPU scheduling gives minimum average waiting time?", "options": ["FCFS", "SJF", "Round Robin", "Priority"], "answer": "SJF", "category": "OS"},
+    {"question": "Virtual memory allows programs to use more space than which hardware?", "options": ["Hard Disk", "RAM", "Cache", "ROM"], "answer": "RAM", "category": "OS"},
+
+    {"question": "SQL stands for?", "options": ["Structured Query Language", "Simple Query Language", "System Query Language", "None"], "answer": "Structured Query Language", "category": "DBMS"},
+    {"question": "Which SQL clause is used to filter records?", "options": ["ORDER BY", "GROUP BY", "WHERE", "HAVING"], "answer": "WHERE", "category": "DBMS"},
+    {"question": "Can a Primary Key have NULL values?", "options": ["Yes", "No", "Sometimes", "Depends"], "answer": "No", "category": "DBMS"},
+
+    {"question": "TCP/IP belongs to which subject?", "options": ["Computer Networks", "Operating System", "DBMS", "DSA"], "answer": "Computer Networks", "category": "CN"},
+    {"question": "HTTP works on which port number?", "options": ["21", "25", "80", "443"], "answer": "80", "category": "CN"},
+    {"question": "Which protocol is connection-oriented?", "options": ["UDP", "TCP", "IP", "ARP"], "answer": "TCP", "category": "CN"},
+
+    {"question": "If 20% of 80 is x, then x = ?", "options": ["12", "14", "16", "18"], "answer": "16", "category": "Aptitude"},
+    {"question": "What comes next in the series: 2, 4, 8, 16, ?", "options": ["20", "24", "28", "32"], "answer": "32", "category": "Aptitude"},
+
+    {"question": "Communication skills improve best by?", "options": ["Reading books only", "Practice speaking regularly", "Sleeping more", "Avoiding interaction"], "answer": "Practice speaking regularly", "category": "Communication"},
+    {"question": "Which is most important during a technical interview?", "options": ["Memorized answers", "Clear problem-solving explanation", "Speaking very fast", "Avoiding questions"], "answer": "Clear problem-solving explanation", "category": "Communication"}
+  ],
+
+  "service": [
+    {"question": "If A is 20% more than B, then B is how much % less than A?", "options": ["16.67%", "20%", "25%", "18%"], "answer": "16.67%", "category": "Aptitude"},
+    {"question": "A train 150m long passes a pole in 15 seconds. Speed?", "options": ["8 m/s", "10 m/s", "12 m/s", "15 m/s"], "answer": "10 m/s", "category": "Aptitude"},
+    {"question": "What comes next in: 2, 4, 8, 16, ?", "options": ["20", "24", "28", "32"], "answer": "32", "category": "Aptitude"},
+    {"question": "If A > B and B > C, who is smallest?", "options": ["A", "B", "C", "Cannot determine"], "answer": "C", "category": "Aptitude"},
+    {"question": "20% of 500 = ?", "options": ["80", "90", "100", "110"], "answer": "100", "category": "Aptitude"},
+
+    {"question": "Communication skills improve best by?", "options": ["Reading books only", "Practice speaking regularly", "Sleeping more", "Avoiding interaction"], "answer": "Practice speaking regularly", "category": "Communication"},
+    {"question": "In a formal email, which salutation is most appropriate?", "options": ["Hey!", "Yo buddy", "Dear Sir/Madam", "Wassup"], "answer": "Dear Sir/Madam", "category": "Communication"},
+    {"question": "What does active listening mean?", "options": ["Listening while multitasking", "Fully focusing on the speaker", "Pretending to listen", "Interrupting frequently"], "answer": "Fully focusing on the speaker", "category": "Communication"},
+    {"question": "Which is most important in a group discussion?", "options": ["Speaking the most", "Listening and contributing meaningfully", "Staying silent", "Only agreeing with others"], "answer": "Listening and contributing meaningfully", "category": "Communication"},
+
+    {"question": "SQL stands for?", "options": ["Structured Query Language", "Simple Query Language", "System Query", "None"], "answer": "Structured Query Language", "category": "DBMS"},
+    {"question": "Which SQL command retrieves data?", "options": ["INSERT", "UPDATE", "SELECT", "DELETE"], "answer": "SELECT", "category": "DBMS"},
+    {"question": "Which normal form removes partial dependencies?", "options": ["1NF", "2NF", "3NF", "BCNF"], "answer": "2NF", "category": "DBMS"},
+    {"question": "Can a Primary Key have NULL values?", "options": ["Yes", "No", "Sometimes", "Depends"], "answer": "No", "category": "DBMS"},
+
+    {"question": "What is the time complexity of Binary Search?", "options": ["O(n)", "O(log n)", "O(n^2)", "O(1)"], "answer": "O(log n)", "category": "DSA"},
+    {"question": "Which data structure follows FIFO?", "options": ["Stack", "Queue", "Tree", "Graph"], "answer": "Queue", "category": "DSA"},
+
+    {"question": "Which of the following is an Operating System?", "options": ["Linux", "Oracle", "HTML", "Python"], "answer": "Linux", "category": "OS"},
+    {"question": "Virtual memory uses which hardware as extension of RAM?", "options": ["Cache", "ROM", "Hard Disk", "Register"], "answer": "Hard Disk", "category": "OS"},
+
+    {"question": "HTTP works on which port?", "options": ["21", "25", "80", "443"], "answer": "80", "category": "CN"},
+    {"question": "DNS converts?", "options": ["IP to MAC", "Domain name to IP", "IP to Domain", "URL to HTML"], "answer": "Domain name to IP", "category": "CN"}
+  ],
+
+  "core": [
+    {"question": "TCP/IP belongs to which subject?", "options": ["Computer Networks", "Operating System", "DBMS", "DSA"], "answer": "Computer Networks", "category": "CN"},
+    {"question": "HTTP works on which port number?", "options": ["21", "25", "80", "443"], "answer": "80", "category": "CN"},
+    {"question": "DNS is used to convert?", "options": ["IP to MAC address", "Domain name to IP address", "IP to Domain name", "URL to HTML"], "answer": "Domain name to IP address", "category": "CN"},
+    {"question": "Which protocol is connection-oriented?", "options": ["UDP", "TCP", "IP", "ARP"], "answer": "TCP", "category": "CN"},
+    {"question": "How many layers does the OSI model have?", "options": ["4", "5", "6", "7"], "answer": "7", "category": "CN"},
+
+    {"question": "Which of the following is an Operating System?", "options": ["Linux", "Oracle", "HTML", "Python"], "answer": "Linux", "category": "OS"},
+    {"question": "Deadlock requires how many necessary conditions?", "options": ["2", "3", "4", "5"], "answer": "4", "category": "OS"},
+    {"question": "Which CPU scheduling gives minimum average waiting time?", "options": ["FCFS", "SJF", "Round Robin", "Priority"], "answer": "SJF", "category": "OS"},
+    {"question": "Virtual memory allows programs to use more space than?", "options": ["Hard Disk", "RAM", "Cache", "ROM"], "answer": "RAM", "category": "OS"},
+
+    {"question": "What is the time complexity of Binary Search?", "options": ["O(n)", "O(log n)", "O(n^2)", "O(1)"], "answer": "O(log n)", "category": "DSA"},
+    {"question": "Which sorting algorithm has O(n log n) worst case?", "options": ["Bubble Sort", "Selection Sort", "Merge Sort", "Insertion Sort"], "answer": "Merge Sort", "category": "DSA"},
+    {"question": "Which data structure is used in BFS?", "options": ["Stack", "Queue", "Tree", "Array"], "answer": "Queue", "category": "DSA"},
+
+    {"question": "SQL stands for?", "options": ["Structured Query Language", "Simple Query Language", "System Query", "None"], "answer": "Structured Query Language", "category": "DBMS"},
+    {"question": "Can a Primary Key have NULL values?", "options": ["Yes", "No", "Sometimes", "Depends"], "answer": "No", "category": "DBMS"},
+    {"question": "Which normal form removes partial dependencies?", "options": ["1NF", "2NF", "3NF", "BCNF"], "answer": "2NF", "category": "DBMS"},
+
+    {"question": "If 20% of 80 is x, then x = ?", "options": ["12", "14", "16", "18"], "answer": "16", "category": "Aptitude"},
+    {"question": "What comes next: 2, 4, 8, 16, ?", "options": ["20", "24", "28", "32"], "answer": "32", "category": "Aptitude"},
+
+    {"question": "Communication skills improve best by?", "options": ["Reading books only", "Practice speaking regularly", "Sleeping more", "Avoiding interaction"], "answer": "Practice speaking regularly", "category": "Communication"},
+    {"question": "Which is most important during a technical interview?", "options": ["Memorized answers", "Clear problem-solving explanation", "Speaking fast", "Avoiding questions"], "answer": "Clear problem-solving explanation", "category": "Communication"}
+  ]
+}

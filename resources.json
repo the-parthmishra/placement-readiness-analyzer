@@ -1,0 +1,44 @@
+{
+  "DSA": [
+    "Practice arrays and strings on HackerRank (Beginner section)",
+    "Study Linked Lists - insertion, deletion, traversal with examples",
+    "Learn recursion using Factorial and Fibonacci problems",
+    "Solve 20 easy problems on LeetCode (Array tag)",
+    "Understand time complexity - O(n), O(log n), O(n^2) differences"
+  ],
+  "OS": [
+    "Study CPU scheduling algorithms - FCFS, SJF, Round Robin with solved examples",
+    "Understand deadlock - learn all 4 necessary conditions clearly",
+    "Learn paging and segmentation in memory management",
+    "Study semaphore and mutex for process synchronization",
+    "Practice OS GATE questions from GeeksForGeeks"
+  ],
+  "DBMS": [
+    "Practice SQL queries - SELECT, WHERE, JOIN, GROUP BY on W3Schools",
+    "Learn normalization - understand 1NF, 2NF, 3NF with simple examples",
+    "Study ACID properties of database transactions",
+    "Understand ER diagrams and how to convert them to tables",
+    "Practice SQL joins - INNER JOIN, LEFT JOIN, RIGHT JOIN with examples"
+  ],
+  "CN": [
+    "Learn all 7 layers of OSI model with their functions",
+    "Understand TCP vs UDP - key differences and when each is used",
+    "Study IP addressing - classes A, B, C and basic subnetting",
+    "Learn how DNS works - domain to IP resolution process",
+    "Understand HTTP and HTTPS - how web pages are served"
+  ],
+  "Aptitude": [
+    "Practice percentage and profit-loss problems daily (30 minutes)",
+    "Solve time-speed-distance problems on IndiaBix.com",
+    "Practice number series and logical reasoning problems",
+    "Take one full mock aptitude test every week",
+    "Learn shortcut methods for quick calculation"
+  ],
+  "Communication": [
+    "Practice answering 20 common HR questions - Tell me about yourself, strengths, weaknesses",
+    "Read an English newspaper for 15 minutes every day",
+    "Record yourself speaking and identify areas to improve",
+    "Practice group discussion topics with friends",
+    "Learn email writing format - formal and professional emails"
+  ]
+}

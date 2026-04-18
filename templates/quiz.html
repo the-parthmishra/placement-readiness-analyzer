@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Quiz</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        .progress-bar-outer {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            margin-bottom: 24px;
+        }
+        .progress-bar-inner {
+            height: 8px;
+            background: #534AB7;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+        .progress-text {
+            font-size: 12px;
+            color: #888;
+            text-align: right;
+            margin-bottom: 6px;
+        }
+        .question-slide {
+            display: none;
+        }
+        .question-slide.active {
+            display: block;
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .btn-prev {
+            flex: 1;
+            padding: 13px;
+            background: white;
+            color: #534AB7;
+            border: 2px solid #534AB7;
+            border-radius: 8px;
+            font-family: 'Poppins', Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-prev:hover { background: #f0eeff; }
+        .btn-next {
+            flex: 2;
+            padding: 13px;
+            background: #534AB7;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Poppins', Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-next:hover { background: #3C3489; }
+        .option label.selected {
+            background: #f0eeff;
+            border-color: #534AB7;
+            font-weight: 500;
+        }
+        .category-badge {
+            display: inline-block;
+            font-size: 11px;
+            padding: 3px 10px;
+            background: #eeedfe;
+            color: #534AB7;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .quiz-header {
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #eee;
+        }
+        .quiz-header p {
+            font-size: 13px;
+            color: #888;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="quiz-header">
+        <h1>&#129300; Placement Readiness Quiz</h1>
+        <p>Target: <strong style="color:#534AB7; text-transform:capitalize;">{{ target }}</strong> Company</p>
+    </div>
+
+    <p class="progress-text" id="progressText">Question 1 of {{ questions|length }}</p>
+    <div class="progress-bar-outer">
+        <div class="progress-bar-inner" id="progressBar" style="width: 0%"></div>
+    </div>
+
+    <form method="POST" action="/result" id="quizForm">
+        <input type="hidden" name="target" value="{{ target }}">
+
+        {% for q in questions %}
+        {% set q_idx = loop.index0 %}
+        {# q_idx saves the QUESTION number (0,1,2...) before we enter the options loop #}
+
+        <div class="question-slide {% if loop.index == 1 %}active{% endif %}"
+             id="slide-{{ q_idx }}">
+
+            <div class="question-block">
+                <span class="category-badge">{{ q.category }}</span>
+                <p class="q-number">Q{{ loop.index }} of {{ questions|length }}</p>
+                <p class="q-text">{{ q.question }}</p>
+
+                <div class="option">
+                    {% for opt in q.options %}
+                    <label>
+                        {# name="q0", "q1", "q2"... — uses q_idx (question number), NOT loop.index0 (option number) #}
+                        <input type="radio"
+                               name="q{{ q_idx }}"
+                               value="{{ opt }}"
+                               onchange="onAnswer({{ q_idx }})">
+                        {{ opt }}
+                    </label>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+
+        <div class="nav-buttons">
+            <button type="button" class="btn-prev" id="btnPrev"
+                    onclick="prevQ()" style="display:none;">
+                &#8592; Previous
+            </button>
+            <button type="button" class="btn-next" id="btnNext" onclick="nextQ()">
+                Next &#8594;
+            </button>
+            <button type="submit" class="btn-next" id="btnSubmit" style="display:none;">
+                Submit Test &#10003;
+            </button>
+        </div>
+
+    </form>
+</div>
+
+<script>
+    const total = {{ questions|length }};
+    let current = 0;
+
+    function updateUI() {
+        document.querySelectorAll('.question-slide').forEach((s, i) => {
+            s.classList.toggle('active', i === current);
+        });
+        const pct = Math.round((current / total) * 100);
+        document.getElementById('progressBar').style.width = pct + '%';
+        document.getElementById('progressText').textContent =
+            'Question ' + (current + 1) + ' of ' + total;
+        document.getElementById('btnPrev').style.display = current > 0 ? 'block' : 'none';
+        const isLast = current === total - 1;
+        document.getElementById('btnNext').style.display   = isLast ? 'none'  : 'block';
+        document.getElementById('btnSubmit').style.display = isLast ? 'block' : 'none';
+    }
+
+    function onAnswer(qIdx) {
+        const slide = document.getElementById('slide-' + qIdx);
+        slide.querySelectorAll('label').forEach(l => l.classList.remove('selected'));
+        const checked = slide.querySelector('input[type=radio]:checked');
+        if (checked) checked.parentElement.classList.add('selected');
+    }
+
+    function nextQ() {
+        const slide = document.getElementById('slide-' + current);
+        const answered = slide.querySelector('input[type=radio]:checked');
+        if (!answered) {
+            slide.querySelector('.question-block').style.border = '2px solid #f44336';
+            slide.querySelector('.question-block').style.background = '#fff5f5';
+            alert('Please select an answer before continuing.');
+            return;
+        }
+        slide.querySelector('.question-block').style.border = '1px solid #e8e8e8';
+        slide.querySelector('.question-block').style.background = '#fafafa';
+        if (current < total - 1) {
+            current++;
+            updateUI();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }
+
+    function prevQ() {
+        if (current > 0) {
+            current--;
+            updateUI();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }
+
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+        for (let i = 0; i < total; i++) {
+            const slide = document.getElementById('slide-' + i);
+            const answered = slide.querySelector('input[type=radio]:checked');
+            if (!answered) {
+                current = i;
+                updateUI();
+                slide.querySelector('.question-block').style.border = '2px solid #f44336';
+                slide.querySelector('.question-block').style.background = '#fff5f5';
+                alert('Question ' + (i + 1) + ' is not answered. Please go back and answer it.');
+                e.preventDefault();
+                return;
+            }
+        }
+    });
+
+    updateUI();
+</script>
+
+</body>
+</html>
