@@ -235,7 +235,9 @@ LIMIT 10
 
 ![Home Page](screenshots/home.png)
 ![Quiz Page](screenshots/quiz.png)
-![Result Page](screenshots/result)
+![Result Page](screenshots/detailed.png)
+![History Page](screenshots/past-test.png)
+![Personlized Roadmap](screenshots/roadmap.png)
 
 ---
 
