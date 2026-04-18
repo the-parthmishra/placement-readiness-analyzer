@@ -4,6 +4,7 @@ from scoring import calculate_scores
 from roadmap import analyze_and_generate
 from config import get_db
 from visual import generate_chart
+import random
 
 app = Flask(__name__)
 
@@ -32,6 +33,7 @@ def quiz():
 
     # Get only questions for the selected target
     questions = all_questions.get(target, [])
+    questions = random.sample(questions, len(questions))
 
     return render_template("quiz.html", questions=questions, target=target)
 
