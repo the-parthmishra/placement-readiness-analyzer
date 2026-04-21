@@ -29,7 +29,7 @@ def get_db():
         conn = mysql.connector.connect(
             host="localhost",
             user="root",
-            password="$Parth6396",        
+            password="your-mySQL-pass",        
             database="placement_tool"
         )
         return conn
