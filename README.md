@@ -243,5 +243,5 @@ LIMIT 10
 
 ## 👤 Author
 
-**Parth Mishra** — BCA Final Year Project  
+**Parth Mishra** 
 [GitHub](https://github.com/the-parthmishra)
