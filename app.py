@@ -108,7 +108,14 @@ def result():
 # -----------------------------------------------
 @app.route("/history")
 def history():
-    return render_template("history.html", disabled=True)
+    return """
+    <h1 style='font-family: Arial; text-align:center; margin-top:60px;'>Past Test History</h1>
+    <p style='text-align:center;'>This feature is available in the full local version of the application.</p>
+    <p style='text-align:center;'>History storage has been disabled in the live demo.</p>
+    <div style='text-align:center; margin-top:20px;'>
+        <a href="/" style="text-decoration:none; font-size:18px;">Go Back Home</a>
+    </div>
+    """
 # -----------------------------------------------
 # RUN
 # -----------------------------------------------
