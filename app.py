@@ -108,28 +108,7 @@ def result():
 # -----------------------------------------------
 @app.route("/history")
 def history():
-    records = []
-    try:
-        db = get_db()
-        if db:
-            cursor = db.cursor(dictionary=True)
-            # CHANGE THIS LINE in history() route:
-            cursor.execute("""
-                    SELECT target, total_score, dsa, os, dbms, cn,
-                    aptitude, communication, created_at
-                    FROM results
-                    ORDER BY created_at DESC
-                    LIMIT 10
-                """)
-            records = cursor.fetchall()
-            cursor.close()
-            db.close()
-    except Exception as e:
-        print("DB Error:", e)
-
-    return render_template("history.html", records=records)
-
-
+    return render_template("history.html", disabled=True)
 # -----------------------------------------------
 # RUN
 # -----------------------------------------------
